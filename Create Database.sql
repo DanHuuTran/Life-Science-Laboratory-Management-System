@@ -1,10 +1,13 @@
-DROP DATABASE IF EXISTS;
+-- Drop the database if it exists
+DROP DATABASE IF EXISTS life_science;
 
-BEGIN TRANSACTION QUICKDBD
+-- Create the database
 CREATE DATABASE life_science;
+
+-- Use the database
 USE life_science;
 
-
+-- Create the customers table
 CREATE TABLE customers (
     customerID INT PRIMARY KEY,
     company_name VARCHAR(255),
@@ -14,8 +17,7 @@ CREATE TABLE customers (
     phone VARCHAR(20)
 );
 
-
-DROP TABLE tests
+-- Create the tests table
 CREATE TABLE tests (
     test_name VARCHAR(255) PRIMARY KEY,
     price DECIMAL(10, 2),
@@ -24,6 +26,7 @@ CREATE TABLE tests (
     department VARCHAR(255)
 );
 
+-- Create the samples table
 CREATE TABLE samples (
     sample_id INT PRIMARY KEY,
     customerID INT,
@@ -31,40 +34,40 @@ CREATE TABLE samples (
     test_name VARCHAR(255),
     receive_date DATE,
     analysis_date DATE,
-	report_date DATE,
-	result VARCHAR(20)
+    report_date DATE,
+    result VARCHAR(20),
     FOREIGN KEY (customerID) REFERENCES customers(customerID),
     FOREIGN KEY (test_name) REFERENCES tests(test_name)
-
 );
 
+-- Create the employee table
 CREATE TABLE employee (
     employeeID INT PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     position VARCHAR(255),
     department VARCHAR(255),
-    report_to VARCHAR(50),
-    hourly_rate DECIMAL(10, 2)
+    report_to INT,
+    hourly_rate DECIMAL(10, 2),
+    FOREIGN KEY (report_to) REFERENCES employee(employeeID)
 );
 
---DROP TABLE shift
+-- Create the shift table
 CREATE TABLE shift (
     shift_id INT PRIMARY KEY,
     day_of_week VARCHAR(20),
-    shift_start varchar(50),
-    shift_end VARCHAR(50)
+    shift_start TIME,
+    shift_end TIME
 );
 
---DROP TABLE inventory
+-- Create the inventory table
 CREATE TABLE inventory (
     reagent VARCHAR(255) PRIMARY KEY,
     quantity INT,
-    price DECIMAL(10, 2),
-    FOREIGN KEY (reagent) REFERENCES tests(reagent)
+    price DECIMAL(10, 2)
 );
 
-DROP TABLE rota
+-- Create the rota table
 CREATE TABLE rota (
     rota_id VARCHAR(50) PRIMARY KEY,
     date DATE,
@@ -74,8 +77,6 @@ CREATE TABLE rota (
     FOREIGN KEY (employeeID) REFERENCES employee(employeeID)
 );
 
-
-COMMIT TRANSACTION QUICKDBD
 
 
 -- import data to the table 'samples' from a csv file 
