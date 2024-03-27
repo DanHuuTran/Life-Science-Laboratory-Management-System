@@ -20,6 +20,9 @@ The Life Science Laboratory Management System is a SQL Server Management System 
 
 3. Access the database via SQL Server Management Studio
 ![Database](https://github.com/DanHuuTran/Life-Science-Laboratory-Management-System/assets/133534096/644a99f1-0ee8-455c-acf3-d59fb511fcf1)
+4. Utilize SQL querries to extract data and create dashboard (All SQL querries and tables are included in the files)
+ ![dashboard](https://github.com/DanHuuTran/Life-Science-Laboratory-Management-System/assets/133534096/90be2cd1-8f7c-4e5f-89a5-e17510a30029)
+
 
 
 ## Contributing
