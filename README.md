@@ -9,7 +9,7 @@ The Life Science Laboratory Management System is a SQL Server Management System 
 * Inventory Management: Manages laboratory inventory, including reagents, consumables, and equipment.
 
 ## Usage
-1. Create a databse model using online tools (I am using Quickdatabasediagram.com) for this project
+1. Create a databse model using online tools (I am using Quickdatabasediagram.com for this project)
 ![Table Relationship](https://github.com/DanHuuTran/Life-Science-Laboratory-Management-System/assets/133534096/1c40211a-803e-44f9-8dce-7c42d09f77bb)
 
 2. Populate the database tables
